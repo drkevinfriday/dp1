@@ -15,13 +15,13 @@ const typeDefs = gql
     reactions: [Reaction]
   }
   type Reaction {
-    _id : ID
+    _id: ID
     reactionBody: String
     createdAt: String
     username: String
   }
   type User {
-    _id : ID
+    _id: ID
     username: String
     email: String
     friendCount: Int
@@ -50,6 +50,9 @@ type Query {
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addThought(thoughtText: String!): Thought
+    addReaction(thoughtId: ID!, reactionBody: String!): Thought
+    addFriend(friendId: ID!): User
   }
 `;
 
